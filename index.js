@@ -50,21 +50,61 @@ L.NewCircleControl = L.Control.extend({
 });
 map.addControl(new L.NewCircleControl());
 
+L.NewTextControl = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+    onAdd: function(map) {
+        var container = L.DomUtil.create('div', 'leaflet-control leaflet-bar'),
+            link = L.DomUtil.create('a', '', container);
+
+        link.href = '#';
+        link.title = 'Create a new Text';
+        link.innerHTML = 'A';
+        L.DomEvent.on(link, 'click', L.DomEvent.stop)
+            .on(link, 'click', function() {
+                // get map center
+                var textLatLng = map.getCenter();
+                L.marker(textLatLng, {
+                    icon: L.divIcon({
+                        className: 'text-labels', // Set class for CSS styling
+                        html: 'A Text Label'
+                    }),
+                    zIndexOffset: 1000, // Make appear above other map features
+                    draggable: true
+                }).addTo(map);
+            });
+        return container;
+    }
+});
+map.addControl(new L.NewTextControl());
+
 var deleteShape = function(e) {
     if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && this.editEnabled()) {
         this.editor.deleteShapeAt(e.latlng);
         // https://gist.github.com/scottopolis/6e35cf0d53bae81e6161662e6374da04
-        delete layersMeta_g[e.target._leaflet_id]
+        delete layersData_g[e.target._leaflet_id]
     } else {
         // layer is clicked, make this layer as the active layer
         setActiveLayer(e.target._leaflet_id)
     }
 };
+
+var deleteText = function(e) {
+    if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && this.editEnabled()) {
+        delete layersData_g[e.target._leaflet_id];
+        map.removeLayer(e.target);
+    } else {
+        // layer is clicked, make this layer as the active layer
+        setActiveLayer(e.target._leaflet_id)
+    }
+};
+
 map.on('layeradd', function(e) {
     if (e.layer instanceof L.Path) e.layer.on('click', L.DomEvent.stop).on('click', deleteShape, e.layer);
     if (e.layer instanceof L.Path) e.layer.on('dblclick', L.DomEvent.stop).on('dblclick', e.layer.toggleEdit);
     if (e.layer instanceof L.Path) {
-        layerType = "NA";
+        var layerType = "NA";
         if (e.layer instanceof L.Circle) {
             layerType = "circle";
             e.layer.setStyle({
@@ -78,9 +118,19 @@ map.on('layeradd', function(e) {
                 color: settings_g.lineClr
             });
         }
-        layersMeta_g[e.layer._leaflet_id] = {
-            "name": "NA",
-            "type": layerType
+        layersData_g[e.layer._leaflet_id] = {
+            meta: { name: "NA" },
+            type: layerType
         };
+    } else if (e.layer instanceof L.Marker) {
+        if (e.layer._icon instanceof HTMLDivElement) {
+            e.layer.on('click', L.DomEvent.stop).on('click', deleteText, e.layer);
+            layerType = "text";
+            var shapeName = e.layer._icon.innerText;
+            layersData_g[e.layer._leaflet_id] = {
+                meta: { name: shapeName },
+                type: layerType
+            };
+        }
     }
 });

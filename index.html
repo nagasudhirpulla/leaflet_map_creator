@@ -10,6 +10,8 @@
     <script src="https://npmcdn.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <script src="https://npmcdn.com/leaflet.path.drag/src/Path.Drag.js"></script>
     <script src="./Leaflet.Editable.js"></script>
+    <link href="node_modules/jsoneditor/dist/jsoneditor.min.css" rel="stylesheet" type="text/css">
+    <script src="node_modules/jsoneditor/dist/jsoneditor.min.js"></script>
     <script src="./controls.js"></script>
 
     <style type='text/css'>
@@ -24,7 +26,9 @@
     <div id='map'></div>
     <div id='tooltip'></div>
     <div>
-        <button id="exportDataBtn">Export data</button>
+        <div id="jsoneditor"></div>
+        <button onclick="submitLayerMetaEditor()">Update</button>
+        <button id="exportDataBtn">Show Map Data</button>
         <pre id="mapDataJson"></pre>
     </div>
     <script src="./index.js"></script>

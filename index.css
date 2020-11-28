@@ -17,3 +17,7 @@
     line-height: 20px;
     z-index: 1000;
 }
+
+#jsoneditor {
+    width: 400px;
+}

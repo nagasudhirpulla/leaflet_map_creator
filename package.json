@@ -1,0 +1,22 @@
+{
+  "name": "leaflet_editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagasudhirpulla/leaflet_map_creator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagasudhirpulla/leaflet_map_creator/issues"
+  },
+  "homepage": "https://github.com/nagasudhirpulla/leaflet_map_creator#readme",
+  "dependencies": {
+    "jsoneditor": "^9.1.4"
+  }
+}
