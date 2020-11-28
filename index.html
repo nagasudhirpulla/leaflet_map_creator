@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no" />
+    <title>Leaflet.Editable demo</title>
+    <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://npmcdn.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://npmcdn.com/leaflet.path.drag/src/Path.Drag.js"></script>
+    <script src="./Leaflet.Editable.js"></script>
+    <script src="./controls.js"></script>
+
+    <style type='text/css'>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+    <div id='tooltip'></div>
+    <div>
+        <button id="exportDataBtn">Export data</button>
+        <pre id="mapDataJson"></pre>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
