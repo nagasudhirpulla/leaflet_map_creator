@@ -2,7 +2,7 @@
 import { globalVars_g } from '../globalVars';
 import { setMetaLayerEditorData } from './metaEditor/setMetaLayerEditorData';
 import { Path } from 'leaflet';
-import { getLayerData } from './getLayerData';
+import { getLayerData } from '../queries/getLayerData';
 
 export const activateLayer = (map: any, layerId: number) => {
     globalVars_g.activeLayerId_g = layerId
