@@ -1,4 +1,4 @@
 import {globalVars_g} from '../../globalVars';
-export const setMetaLayerEditorData = (jObj: object) => {
-    globalVars_g.layerMetaEditor_g.set(jObj)
+export const setLayerEditorData = (jObj: object) => {
+    globalVars_g.layerDataEditor_g.set(jObj)
 }

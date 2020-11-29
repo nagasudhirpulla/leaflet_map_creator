@@ -1,4 +1,3 @@
-
 export const exportMapData = (map: any, mapDataDispDivId: string, layersData: object) => {
     let mapData = { lines: [], circles: [] }
     const layerKeys = Object.keys(layersData)

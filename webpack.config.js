@@ -12,7 +12,8 @@ module.exports = {
 
     // https://webpack.js.org/configuration/externals/
     externals: {
-        jquery: 'jQuery'
+        jquery: 'jQuery',
+        leaflet: 'L'
     },
 
     // Enable sourcemaps for debugging webpack's output.
