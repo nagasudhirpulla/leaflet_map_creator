@@ -12,7 +12,7 @@ window.onload = function() {
 
 function wireUpControls() {
     initLayerMetaEditor();
-    document.getElementById("exportDataBtn").onclick = exportMapData;
+    document.getElementById("mapDataExportDataBtn").onclick = exportMapData;
 }
 
 function initLayerMetaEditor() {
