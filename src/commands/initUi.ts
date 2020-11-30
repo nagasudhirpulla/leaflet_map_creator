@@ -1,11 +1,9 @@
 import { initShapeDataEditor } from '../utils/shapeDataEditor/initShapeDataEditor';
 import { exportMapData } from '../utils/map/exportMapData';
-import { mapDataExportBtnId_g, jsonEditorId_g, colorSettings_g, globalVars_g, mapDataDispDivId_g, initialMapCenter_g, initialMapZoom_g, updateShapeDataBtnId_g } from '../globalVars';
+import { mapDataExportBtnId_g, jsonEditorId_g, globalVars_g, mapDataDispDivId_g, initialMapCenter_g, initialMapZoom_g, updateShapeDataBtnId_g } from '../globalVars';
 import { createMap } from '../utils/map/createMap';
-import { addMapButtons } from '../utils/map/addMapButtons';
-declare var L;
 import { enforceShapeEditorData } from './enforceShapeEditorData';
-import { onShapeAdd } from './map/onShapeAdd';
+import { onShapeAdd } from '../eventHandlers/onShapeAdd';
 
 export const initUi = () => {
     globalVars_g.map = createMap(initialMapCenter_g, initialMapZoom_g)

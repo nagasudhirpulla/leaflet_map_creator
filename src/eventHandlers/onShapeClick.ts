@@ -1,6 +1,6 @@
-import { globalVars_g } from "../../globalVars";
-import { deleteShapeData } from "../../utils/shapeData/deleteShapeData";
-import { changeActiveShape } from "../changeActiveShape";
+import { changeActiveShape } from "../commands/changeActiveShape";
+import { globalVars_g } from "../globalVars";
+import { deleteShapeData } from "../utils/shapeData/deleteShapeData";
 
 export const onShapeClick = function (e) {
     if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && this.editEnabled()) {

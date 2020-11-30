@@ -1,7 +1,7 @@
-import { deleteShapeData } from "../../utils/shapeData/deleteShapeData";
-import { changeActiveShape } from "../changeActiveShape";
-import { removeMapLayer } from "../../utils/map/removeMapLayer";
-import { globalVars_g } from "../../globalVars";
+import { changeActiveShape } from "../commands/changeActiveShape";
+import { globalVars_g } from "../globalVars";
+import { removeMapLayer } from "../utils/map/removeMapLayer";
+import { deleteShapeData } from "../utils/shapeData/deleteShapeData";
 
 export const onTextClick = function (e) {
     if ((e.originalEvent.ctrlKey || e.originalEvent.metaKey) && this.editEnabled()) {

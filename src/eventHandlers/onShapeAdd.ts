@@ -1,7 +1,7 @@
-import { colorSettings_g, globalVars_g } from "../../globalVars";
-import { getDefaultShapeData } from "../../utils/shapeData/getDefaultShapeData";
-import { getDefaultShapeStyle } from "../../utils/shapeData/getDefaultShapeStyle";
-import { setShapeData } from "../../utils/shapeData/setShapeData";
+import { colorSettings_g, globalVars_g } from "../globalVars";
+import { getDefaultShapeData } from "../utils/shapeData/getDefaultShapeData";
+import { getDefaultShapeStyle } from "../utils/shapeData/getDefaultShapeStyle";
+import { setShapeData } from "../utils/shapeData/setShapeData";
 import { onShapeClick } from "./onShapeClick";
 import { onTextClick } from "./onTextClick";
 declare var L;
