@@ -1,6 +1,6 @@
 import { colorSettings_g } from "../../globalVars";
 import { getDefaultShapeData } from "../../utils/shapeData/getDefaultShapeData";
-import { getDefaultShapeStyle } from "../getDefaultShapeStyle";
+import { getDefaultShapeStyle } from "../../utils/shapeData/getDefaultShapeStyle";
 import { setShapeData } from "../setShapeData";
 import { onShapeClick } from "./onShapeClick";
 import { onTextClick } from "./onTextClick";
