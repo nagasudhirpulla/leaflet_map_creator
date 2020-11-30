@@ -1,3 +1,5 @@
+import { addMapButtons } from "./addMapButtons";
+
 declare var L;
 
 export const createMap = (mapCenter: number[], mapZoom: number) => {
@@ -8,5 +10,6 @@ export const createMap = (mapCenter: number[], mapZoom: number) => {
             maxZoom: 20,
             attribution: 'Data \u00a9 <a href="http://www.openstreetmap.org/copyright"> OpenStreetMap Contributors </a> Tiles \u00a9 HOT'
         }).addTo(map);
-    return map;
+    addMapButtons(map)
+    return map
 }

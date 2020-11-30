@@ -1,12 +1,17 @@
 import JSONEditor from "jsoneditor";
+export interface IColorSettings {
+    circleClr: string,
+    lineClr: string
+}
+
 export const globalVars_g = {
-    layersData_g: {},
-    activeLayerId_g: -1,
-    layerDataEditor_g: null as JSONEditor,
+    shapesData: {},
+    activeShapeId: -1,
+    shapeDataEditor: null as JSONEditor,
     map: null
 }
 
-export const settings_g = {
+export const colorSettings_g: IColorSettings = {
     circleClr: "red",
     lineClr: "blue"
 }
