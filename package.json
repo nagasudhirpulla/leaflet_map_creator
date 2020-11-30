@@ -24,6 +24,7 @@
         "babel-polyfill": "^6.26.0",
         "jsoneditor": "^9.1.4",
         "leaflet": "^1.7.1",
+        "leaflet.path.drag": "0.0.6",
         "source-loader": "^1.0.0",
         "source-map-loader": "^1.1.2",
         "ts-loader": "^8.0.11",

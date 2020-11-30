@@ -4,8 +4,8 @@
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no" />
-    <title>Leaflet.Editable demo</title>
-    <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.2.0/dist/leaflet.css" />
+    <title>Leaflet Mapboard Editor</title>
+    <link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css" />
     <link href="./node_modules/jsoneditor/dist/jsoneditor.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="./index.css" />
 
@@ -21,13 +21,14 @@
     <div id='map'></div>
     <div id='tooltip'></div>
     <div>
-        <div id="jsoneditor"></div>
-        <button id="updateShapeDataBtn">Update</button>
         <button id="mapDataExportDataBtn">Show Map Data</button>
+        <h3>Selected Shape Data Editor</h3>
+        <div id="jsoneditor"></div>
+        <button id="updateShapeDataBtn">Update Selected Shape Data</button>
         <pre id="mapDataJson"></pre>
     </div>
     <script src="./node_modules/leaflet/dist/leaflet.js"></script>
-    <script src="https://npmcdn.com/leaflet.path.drag/src/Path.Drag.js"></script>
+    <script src="./node_modules/leaflet.path.drag/src/Path.Drag.js"></script>
     <script src="./lib/Leaflet.Editable.js"></script>
     <script src="./dist/main.js"></script>
 </body>
