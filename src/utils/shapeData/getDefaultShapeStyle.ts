@@ -1,5 +1,5 @@
 import { IColorSettings } from "../../globalVars";
-export var L;
+declare var L;
 
 export const getDefaultShapeStyle = (layer, clrSettings: IColorSettings) => {
     let defStyleObj = null
